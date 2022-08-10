@@ -3,20 +3,18 @@ import "../App.css";
 
 const Numbers = ({ numbers, targetNumber }) => {
   return (
-    <>
-      {numbers.map((number, i) => {
+    <div className="numberContainer">
+      {numbers.map((number) => {
         return (
-          <div className="numberContainer">
-            <div className="startingNumber" key={i}>
+          <div className="startingNumberContainer" key={number}>
+            <div className="startingNumber" key={number}>
               {number}
             </div>
           </div>
         );
       })}
-      <div className="numberContainer">
-        <div className="targetNumber">{targetNumber}</div>
-      </div>
-    </>
+      <div className="targetNumber">{targetNumber}</div>
+    </div>
   );
 };
 

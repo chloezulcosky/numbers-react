@@ -1,43 +1,212 @@
+body {
+  background-color: lightgrey;
+  align-items: center;
+}
+
+.outerContainer {
+  margin: auto;
+  width: 50%;
+  padding: 5px;
+}
+
+.title {
+  color: black;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+}
+
+.explanation {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 0 0 72px;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
 .numberContainer {
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: center;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  margin-bottom: 5%;
 }
 
 .startingNumber {
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  padding: 8px;
+  width: 48px;
+  height: 48px;
+  line-height: 72px;
 
-  background: darkslategray;
-  border: 2px solid black;
-  color: white;
-  text-align: center;
-
-  font: 32px Arial, sans-serif;
+  color: black;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  letter-spacing: -1px;
+  font-size: 50px;
 }
 
 .targetNumber {
+  display: block;
+  height: 72px;
+  width: 72px;
+  line-height: 72px;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  padding: 8px;
 
-  background: green;
-  border: 2px solid black;
+  background-color: black;
   color: white;
   text-align: center;
+  font-size: 48px;
 
-  font: 32px Arial, sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
 }
 
 .keyboardLine {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
 }
 
 .text {
   margin: auto;
+}
+
+.currentGuessContainer {
+  flex-direction: row;
+  width: 70%;
+  padding-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 64px;
+  max-height: 64px;
+  padding-left: 2%;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.currentGuess {
+  display: inline-block;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 32px;
+  text-align: left;
+  margin: auto;
+}
+
+.clearButton {
+  display: inline-flex;
+  color: black;
+  float: right;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 32px;
+  text-align: left;
+  margin-right: 2%;
+  background-color: #222222;
+  color: white;
+  box-shadow: none;
+}
+
+.numberButton {
+  background-color: #ffffff;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s,
+    transform 0.1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+}
+
+.numberButton:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow 0.2s;
+}
+
+.numberButton:active {
+  background-color: #f7f7f7;
+  border-color: #000000;
+  transform: scale(0.96);
+}
+
+.numberButton:disabled {
+  border-color: #dddddd;
+  color: #dddddd;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.actionButton {
+  background-color: #ffffff;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s,
+    transform 0.1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: 30%;
+}
+
+.actionButton:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow 0.2s;
+}
+
+.actionButton:active {
+  background-color: #f7f7f7;
+  border-color: #000000;
+  transform: scale(0.96);
+}
+
+.actionButton:disabled {
+  border-color: #dddddd;
+  color: #dddddd;
+  cursor: not-allowed;
+  opacity: 1;
 }

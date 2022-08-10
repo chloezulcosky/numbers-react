@@ -10,18 +10,25 @@ while (numArray.length < 5) {
   if (numArray.indexOf(r) === -1) numArray.push(r);
 }
 
-let usedNumbers = [];
-let usedOperations = [];
-
 var targetNumber = Math.floor(Math.random() * 40) + 10;
+
+// TESTING! (6/1)*4-(8+5)
+numArray = [6, 1, 4, 8, 5];
+targetNumber = 11;
 
 function App() {
   return (
-    <>
+    <div className="outerContainer">
       <Header></Header>
-      <Numbers numbers={numArray} targetNumber={targetNumber}></Numbers>
-      <Keyboard></Keyboard>
-    </>
+      <Numbers
+        numbers={numArray.map(String)}
+        targetNumber={targetNumber}
+      ></Numbers>
+      <Keyboard
+        numbers={numArray.map(String)}
+        targetNumber={targetNumber}
+      ></Keyboard>
+    </div>
   );
 }
 
