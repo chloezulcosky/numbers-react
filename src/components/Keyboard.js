@@ -68,20 +68,38 @@ const Keyboard = ({ numbers, targetNumber }) => {
       return;
     }
 
-    // Make sure "-" is not used as negative
+    // Check for use of negative numbers
     if (currentGuess[0] === "-") {
       alert("Invalid guess");
       return;
-    }
-    // No +-, /-, */, (-, but )- is okay
-    else {
-      let subtractionIndex = operations.indexOf("-");
+    } else {
+      let subtractionIndex = currentGuess.indexOf("-");
       if (
         isOperation(currentGuess[subtractionIndex - 1]) &&
         currentGuess[subtractionIndex - 1] !== ")"
       ) {
         alert("Invalid guess");
         return;
+      }
+    }
+
+    // Check for adjacent numbers (i.e. no 12 using 1 & 2)
+    for (let i = 0; i < numbers.length; i++) {
+      let numberIndex = currentGuess.indexOf(numbers[i]);
+      if (numberIndex === 0 && isNum(currentGuess[numberIndex + 1])) {
+        alert("Must use the numbers provided.");
+      } else if (
+        numberIndex === currentGuess.length - 1 &&
+        isNum(currentGuess[numberIndex - 1])
+      ) {
+        alert("Must use the numbers provided.");
+      } else {
+        if (
+          isNum(currentGuess[numberIndex - 1]) ||
+          isNum(currentGuess[numberIndex + 1])
+        ) {
+          alert("Must use the numbers provided.");
+        }
       }
     }
 

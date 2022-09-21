@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Numbers from "./components/Numbers";
@@ -11,10 +10,6 @@ while (numArray.length < 5) {
 }
 
 var targetNumber = Math.floor(Math.random() * 40) + 10;
-
-// TESTING! (6/1)*4-(8+5)
-numArray = [6, 1, 4, 8, 5];
-targetNumber = 11;
 
 function App() {
   return (
